@@ -1,7 +1,8 @@
 (ns four-clojure.core
   (:gen-class))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(defn my-last 
+  "Returns last element of a collection"
+  [collection]
+  (first (drop (- (count collection) 1) collection)))
+
