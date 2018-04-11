@@ -6,3 +6,7 @@
   [collection]
   (first (drop (- (count collection) 1) collection)))
 
+(defn my-penultimate
+  [collection]
+  (first (drop (- (count collection) 2) collection)))
+
