@@ -10,3 +10,8 @@
   [collection]
   (first (drop (- (count collection) 2) collection)))
 
+(defn my-nth-element
+  "Returns the nth element of a sequence"
+  [collection nth-element]
+  (first (drop nth-element collection)))
+
