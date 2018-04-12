@@ -57,4 +57,9 @@
       (last)
       (last)
       (inc)))
-  
+
+(defn palindrome?
+  "Returns true is sequence is a palindrom"
+  [coll]
+  (= (seq  coll) (reverse coll)))
+

@@ -31,3 +31,10 @@
 (deftest only-odd-test
   (is (= (only-odds [4 2 1 6]) '(1))))
 
+(deftest palidrome?-test
+  (is (false? (palindrome? '(1 2 3 4 5))))
+  (is (true? (palindrome? [:foo :bar :foo])))
+  (is (true? (palindrome? '(1 1 3 3 1 1))))
+  (is (false? (palindrome? '(:a :b :c))))
+  (is (true?  (palindrome? "racecar"))))
+
