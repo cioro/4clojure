@@ -41,7 +41,7 @@
               ;; QUESTIONS: why does writing (b) raises an exception?
               ;; Why should I invert the lazy-seq and the cons functions.
               (lazy-seq (cons a (fib b (+ a b)))))]
-    (take nth-element (fib 0 1))))
+    (rest  (take (+  nth-element 1) (fib 0 1)))))
 
 (defn my-fib-2
   [nth-element]
