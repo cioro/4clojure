@@ -20,3 +20,8 @@
   [collection]
   (reduce (fn [result _] (inc result)) 0 collection))
 
+(defn my-reverse
+  "Returns a reversed sequence"
+  [coll]
+  (reduce conj () coll))
+
