@@ -68,3 +68,8 @@
   [coll]
   (filter (complement sequential?)
           (rest (tree-seq sequential? seq coll))))
+
+(defn only-upper-case
+  "Returns a string with only the upper case letters"
+  [string]
+  (reduce str (filter #(Character/isUpperCase %) string)))

@@ -42,3 +42,8 @@
   (is (= (my-flatten '((1 2) 3 [4 [5 6]])) '(1 2 3 4 5 6)))
   (is (= (my-flatten ["a" ["b"] "c"]) '("a" "b" "c")))
   (is (= (my-flatten '((((:a))))) '(:a))))
+
+(deftest only-upper-case-test
+  (is (= (only-upper-case "HeLlO, WoRlD!") "HLOWRD"))
+  (is (empty? (only-upper-case "nothing")))
+  (is (= (only-upper-case "$#A(*&987Zf") "AZ")))
