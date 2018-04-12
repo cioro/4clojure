@@ -63,3 +63,8 @@
   [coll]
   (= (seq  coll) (reverse coll)))
 
+(defn my-flatten
+  "Flattens a sequence"
+  [coll]
+  (filter (complement sequential?)
+          (rest (tree-seq sequential? seq coll))))
