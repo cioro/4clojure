@@ -47,3 +47,8 @@
   (is (= (only-upper-case "HeLlO, WoRlD!") "HLOWRD"))
   (is (empty? (only-upper-case "nothing")))
   (is (= (only-upper-case "$#A(*&987Zf") "AZ")))
+
+(deftest compress-seq-test
+  (is (= (apply str (compress-seq "Leeeeeerrroyyy")) "Leroy"))
+  (is (= (compress-seq [1 1 2 3 3 2 2 3]) '(1 2 3 2 3)))
+  (is (= (compress-seq [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2]))))

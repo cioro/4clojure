@@ -77,3 +77,13 @@
 (defn only-upper-case-2
   [string]
   (reduce str (re-seq #"[A-Z]" string )))
+
+(defn compress-seq
+  "Removes consecutive duplicates from a seq"
+  [coll]
+  (reduce (fn [acc x]
+            (concat acc 
+                    (when (not= (last acc) x)
+                      [x])))
+          []
+          coll))
