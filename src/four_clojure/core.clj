@@ -73,3 +73,7 @@
   "Returns a string with only the upper case letters"
   [string]
   (reduce str (filter #(Character/isUpperCase %) string)))
+
+(defn only-upper-case-2
+  [string]
+  (reduce str (re-seq #"[A-Z]" string )))
