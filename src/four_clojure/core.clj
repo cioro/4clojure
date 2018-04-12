@@ -30,3 +30,31 @@
   [coll]
   (filter (fn [x] (not= (mod x 2) 0)) coll))
 
+;; Use scope function for use only once functions or
+;; functions that are only used within another function
+
+(defn my-fib
+  "Returns the fibonnaci sequence up to the nth-element"
+  [nth-element]
+  (let [fib (fn fib
+              [a b]
+              ;; QUESTIONS: why does writing (b) raises an exception?
+              ;; Why should I invert the lazy-seq and the cons functions.
+              (lazy-seq (cons a (fib b (+ a b)))))]
+    (take nth-element (fib 0 1))))
+
+(defn my-fib-2
+  [nth-element]
+  (let [fib-step (fn fib-step [[a b]] [b (+ a b)])
+        fib-seq  (fn fib-seq  [] (map first (iterate fib-step [0 1])))]
+    (take nth-element (fib-seq))
+   ))
+
+(defn strange-count
+  [coll]
+  (-> coll
+      (zipmap (range))
+      (last)
+      (last)
+      (inc)))
+  
