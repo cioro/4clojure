@@ -28,3 +28,6 @@
   (is (= (my-reverse (sorted-set 5 7 2 7)) '(7 5 2)))
   (is (= (my-reverse [[1 2] [3 4] [5 6]]) [[5 6] [3 4] [1 2]])))
 
+(deftest only-odd-test
+  (is (= (only-odds [4 2 1 6]) '(1))))
+

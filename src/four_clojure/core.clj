@@ -25,3 +25,8 @@
   [coll]
   (reduce conj () coll))
 
+(defn only-odds
+  "Returns only the odd numbers"
+  [coll]
+  (filter (fn [x] (not= (mod x 2) 0)) coll))
+
