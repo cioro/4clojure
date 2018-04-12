@@ -15,3 +15,8 @@
   [collection nth-element]
   (first (drop nth-element collection)))
 
+(defn my-count
+  "Returns total number of elements in a seq"
+  [collection]
+  (reduce (fn [result _] (inc result)) 0 collection))
+

@@ -18,3 +18,8 @@
   (is (= (my-nth-element [1 2 3 4] 1) 2))
   (is (= (my-nth-element '([1 2] [3 4] [5 6]) 2) [5 6])))
 
+(deftest my-count-test
+  (is (= (my-count '(1 2 3 3 1)) 5))
+  (is (= (my-count "Hello World") 11))
+  (is (= (my-count [[1 2] [3 4] [5 6]]) 3)))
+
