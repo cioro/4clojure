@@ -52,3 +52,8 @@
   (is (= (apply str (compress-seq "Leeeeeerrroyyy")) "Leroy"))
   (is (= (compress-seq [1 1 2 3 3 2 2 3]) '(1 2 3 2 3)))
   (is (= (compress-seq [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2]))))
+
+(deftest pack-seq-test
+  (is (= (pack-seq [1 1 2 1 1 1 3 3]) '((1 1) (2) (1 1 1) (3 3))))
+  (is (= (pack-seq [:a :a :b :b :c]) '((:a :a) (:b :b) (:c))))
+  (is (= (pack-seq [[1 2] [1 2] [3 4]]) '(([1 2] [1 2]) ([3 4])))))

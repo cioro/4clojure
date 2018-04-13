@@ -87,3 +87,7 @@
                       [x])))
           []
           coll))
+(defn pack-seq
+  "Packs consecutive duplicates into sub-lists"
+  [coll]
+  (partition-by identity coll))
