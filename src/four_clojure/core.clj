@@ -87,6 +87,17 @@
                       [x])))
           []
           coll))
+
+(defn compress-seq-2
+  "Removes consecutive duplicates from a seq"
+  [coll]
+  (reduce (fn [acc x]
+            (if (= (last acc) x)
+                acc
+                (conj acc x)))
+          []
+          coll))
+
 (defn pack-seq
   "Packs consecutive duplicates into sub-lists"
   [coll]
