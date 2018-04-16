@@ -80,3 +80,8 @@
   (is (= (my-interleave [1 2] [3 4 5 6]) '(1 3 2 4)))
   (is (= (my-interleave [1 2 3 4] [5]) [1 5]))
   (is (= (my-interleave [30 20] [25 15]) [30 25 20 15])))
+
+(deftest drop-every-nth-element-test
+  (is (= (drop-every-nth-element [1 2 3 4 5 6 7 8] 3) [1 2 4 5 7 8]))
+  (is (= (drop-every-nth-element [:a :b :c :d :e :f] 2) [:a :c :e]))
+  (is (= (drop-every-nth-element [1 2 3 4 5 6] 4) [1 2 3 5 6])))

@@ -139,3 +139,10 @@
 (defn my-interleave
   [c1 c2]
   (flatten (map #(concat [%1] [%2]) c1 c2)))
+
+
+(defn drop-every-nth-element
+  [coll n]
+  (keep-indexed (fn [idx v]
+                  (if (not= (mod (inc idx) n) 0)
+                    v)) coll))
