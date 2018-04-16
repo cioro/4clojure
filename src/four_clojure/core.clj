@@ -135,3 +135,7 @@
   (rest (#(reduce (fn [acc x] (conj acc %1 x))
                     []
                     %2) v coll)))
+
+(defn my-interleave
+  [c1 c2]
+  (flatten (map #(concat [%1] [%2]) c1 c2)))
