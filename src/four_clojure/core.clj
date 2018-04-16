@@ -113,3 +113,11 @@
   [k m]
   (nil? (get m k :not-found)))
 
+
+(defn duplicates-elements
+  "Duplicates every element of input seq"
+  [coll]
+  (reduce (fn [acc x]
+            (conj acc x x))
+          []
+          coll))

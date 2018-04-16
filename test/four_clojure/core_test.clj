@@ -57,3 +57,8 @@
   (is (= (pack-seq [1 1 2 1 1 1 3 3]) '((1 1) (2) (1 1 1) (3 3))))
   (is (= (pack-seq [:a :a :b :b :c]) '((:a :a) (:b :b) (:c))))
   (is (= (pack-seq [[1 2] [1 2] [3 4]]) '(([1 2] [1 2]) ([3 4])))))
+
+(deftest duplicates-elements-test
+  (is (= (duplicates-elements [1 2 3]) '(1 1 2 2 3 3)))
+  (is (= (duplicates-elements [:a :a :b :b]) '(:a :a :a :a :b :b :b :b)))
+  (is (= (duplicates-elements [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))))
