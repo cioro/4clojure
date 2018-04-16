@@ -69,3 +69,8 @@
   (is (= (repeat-elements-n-times [4 5 6] 1) '(4 5 6)))
   (is (= (repeat-elements-n-times [[1 2] [3 4]] 2) '([1 2] [1 2] [3 4] [3 4])))
   (is (= (repeat-elements-n-times [44 33] 2) [44 44 33 33])))
+
+(deftest my-interpose-test
+  (is (= (my-interpose 0 [1 2 3]) [1 0 2 0 3]))
+  (is (= (apply str (my-interpose ", " ["one" "two" "three"])) "one, two, three"))
+  (is (= (my-interpose :z [:a :b :c :d]) [:a :z :b :z :c :z :d])))

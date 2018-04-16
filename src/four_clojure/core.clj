@@ -128,3 +128,10 @@
   (reduce (fn [acc x]  (concat acc (repeat n x)))
           []
           coll))
+
+(defn my-interpose
+  "Separates each item in a sequence by using value v"
+  [v coll]
+  (rest (#(reduce (fn [acc x] (conj acc %1 x))
+                    []
+                    %2) v coll)))
