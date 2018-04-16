@@ -121,3 +121,10 @@
             (conj acc x x))
           []
           coll))
+
+(defn repeat-elements-n-times
+  "Creates a new seq where every element is repeat n times"
+  [coll n]
+  (reduce (fn [acc x]  (concat acc (repeat n x)))
+          []
+          coll))

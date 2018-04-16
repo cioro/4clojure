@@ -62,3 +62,10 @@
   (is (= (duplicates-elements [1 2 3]) '(1 1 2 2 3 3)))
   (is (= (duplicates-elements [:a :a :b :b]) '(:a :a :a :a :b :b :b :b)))
   (is (= (duplicates-elements [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))))
+
+(deftest repeat-elements-n-times-test
+  (is (= (repeat-elements-n-times [1 2 3] 2) '(1 1 2 2 3 3)))
+  (is (= (repeat-elements-n-times [:a :b] 4) '(:a :a :a :a :b :b :b :b)))
+  (is (= (repeat-elements-n-times [4 5 6] 1) '(4 5 6)))
+  (is (= (repeat-elements-n-times [[1 2] [3 4]] 2) '([1 2] [1 2] [3 4] [3 4])))
+  (is (= (repeat-elements-n-times [44 33] 2) [44 44 33 33])))
