@@ -102,3 +102,14 @@
   "Packs consecutive duplicates into sub-lists"
   [coll]
   (partition-by identity coll))
+
+(defn map-creator
+  "Create a map with a given set of keys and default"
+  [default-value ks]
+  (let [default-values (repeat default-value)]
+    (zipmap ks default-values)))
+
+(defn contains-nil-for-key
+  [k m]
+  (nil? (get m k :not-found)))
+
